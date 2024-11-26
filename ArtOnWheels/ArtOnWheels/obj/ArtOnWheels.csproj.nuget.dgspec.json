@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Desktop\\C#\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj": {}
+    "C:\\Users\\HP\\OneDrive\\Desktop\\humber\\sem 2\\Back end development\\Art-on-Wheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Desktop\\C#\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Desktop\\humber\\sem 2\\Back end development\\Art-on-Wheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Desktop\\C#\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\humber\\sem 2\\Back end development\\Art-on-Wheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj",
         "projectName": "ArtOnWheels",
-        "projectPath": "C:\\Users\\HP\\Desktop\\C#\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\humber\\sem 2\\Back end development\\Art-on-Wheels\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Desktop\\C#\\ArtOnWheels\\ArtOnWheels\\ArtOnWheels\\obj\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\humber\\sem 2\\Back end development\\Art-on-Wheels\\ArtOnWheels\\ArtOnWheels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,6 +62,18 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[6.9.0, )"
             }
           },
           "imports": [
@@ -86,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

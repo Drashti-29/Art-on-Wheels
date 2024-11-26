@@ -40,11 +40,5 @@ namespace ArtOnWheels.Models
 
         // Date of the exhibition event, for scheduling and display
         public DateTime Date { get; set; }
-
-        // Collection of ArtworkDto objects to provide details about each artwork in the exhibition
-        public List<ArtworkDto> Artworks { get; set; }
-
-        // Collection of StaffDto objects to provide details about each staff member associated with the exhibition
-        public List<StaffDto> Staffs { get; set; }
     }
 }

@@ -39,12 +39,7 @@ namespace ArtOnWheels.Models
         public List<int> ArtworkIds { get; set; } = new List<int>();
 
         // Optionally, collection of ArtworkDto objects for detailed information about each artwork
-        public List<ArtworkDto> Artworks { get; set; } = new List<ArtworkDto>();
+        public List<String> ArtworkTiles { get; set; }
 
-        // Collection of exhibition IDs associated with this car, useful for simple referencing of exhibitions
-        public List<int> ExhibitionIds { get; set; } = new List<int>();
-
-        // Optionally, collection of ExhibitionDto objects for detailed information about each exhibition
-        public List<ExhibitionDto> Exhibitions { get; set; } = new List<ExhibitionDto>();
-    }
+          }
 }

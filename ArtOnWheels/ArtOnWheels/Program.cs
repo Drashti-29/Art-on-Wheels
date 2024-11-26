@@ -1,4 +1,7 @@
 using ArtOnWheels.Data;
+using ArtOnWheels.Interfaces;
+using ArtOnWheels.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +16,12 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+// Associate service interfaces with their implementations
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<IArtworkService, ArtworkService>();
+
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -39,5 +48,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();

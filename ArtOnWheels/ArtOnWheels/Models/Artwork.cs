@@ -62,6 +62,6 @@ namespace ArtOnWheels.Models
         public string ArtistName { get; set; }
 
         // List of exhibitions where the artwork is featured, represented as ExhibitionDto objects
-        public List<ExhibitionDto> Exhibitions { get; set; }
+        public List<String> ExhibitionNames { get; set; }
     }
 }
