@@ -16,7 +16,10 @@ namespace ArtOnWheels.Services
         }
         public async Task<IEnumerable<ArtistDto>> ListArtists()
         {
-            List<Artist> artists = await _context.Artists.ToListAsync();
+            List<Artist> artists = await _context.Artists
+                .Include(a => a.Artworks)
+                .ThenInclude(artwork => artwork.Exhibitions) // Include exhibitions for each artwork
+                .ToListAsync();
 
             // empty list of data transfer object ArtistDto
             List<ArtistDto> artistDtos = new List<ArtistDto>();
@@ -29,7 +32,21 @@ namespace ArtOnWheels.Services
                     FirstName = artist.FirstName,
                     LastName = artist.LastName,
                     ArtistBio = artist.ArtistBio,
-                    Email = artist.Email
+                    Email = artist.Email,
+                    ArtworkIds = artist.Artworks.Select(Artwork => Artwork.ArtworkId).ToList(),
+                    Artworks = artist.Artworks.Select(artwork => new ArtworkDto
+                    {
+                        ArtworkId = artwork.ArtworkId,
+                        Title = artwork.Title,
+                        Description = artwork.Description,
+                        CreationYear = artwork.CreationYear,
+                        Price = artwork.Price,
+                        ArtistId = artwork.ArtistId,
+                        ArtistName = artwork.Artist.FirstName,
+                        // Ensure Exhibitions is initialized to prevent null reference exception
+                        ExhibitionNames = artwork.Exhibitions.Select(exhibitiion => exhibitiion.ExhibitionName).ToList()
+
+                    }).ToList()
                 });
             }
 
@@ -57,6 +74,7 @@ namespace ArtOnWheels.Services
                 LastName = artist.LastName,
                 ArtistBio = artist.ArtistBio,
                 Email = artist.Email,
+                ArtworkIds = artist.Artworks.Select(Artwork => Artwork.ArtworkId).ToList(),
                 Artworks = artist.Artworks.Select(artwork => new ArtworkDto
                 {
                     ArtworkId = artwork.ArtworkId,
@@ -65,6 +83,10 @@ namespace ArtOnWheels.Services
                     CreationYear = artwork.CreationYear,
                     Price = artwork.Price,
                     ArtistId = artwork.ArtistId,
+                    ArtistName = artwork.Artist.FirstName,
+                    // Ensure Exhibitions is initialized to prevent null reference exception
+                    ExhibitionNames = artwork.Exhibitions.Select(exhibitiion => exhibitiion.ExhibitionName).ToList()
+
                 }).ToList()
             };
 
@@ -73,20 +95,56 @@ namespace ArtOnWheels.Services
         }
         public async Task<ServiceResponse> CreateArtist(ArtistDto artistDto)
         {
-            ServiceResponse serviceResponse = new();
-            Artist artist = new Artist()
-            {
-                FirstName = artistDto.FirstName,
-                LastName = artistDto.LastName,
-                ArtistBio = artistDto.ArtistBio,
-                Email = artistDto.Email
-            };
-            _context.Artists.Add(artist);
-            await _context.SaveChangesAsync();
+            var response = new ServiceResponse();
 
-            serviceResponse.Status = ServiceResponse.ServiceStatus.Created;
-            serviceResponse.CreatedId = artist.ArtistId;
-            return serviceResponse;
+            try
+            {
+                // Create the new artist entity
+                var artist = new Artist
+                {
+                    FirstName = artistDto.FirstName,
+                    LastName = artistDto.LastName,
+                    ArtistBio = artistDto.ArtistBio,
+                    Email = artistDto.Email
+                };
+
+                // Add the artist to the context
+                _context.Artists.Add(artist);
+
+                // Fetch and assign artworks
+                if (artistDto.ArtworkIds != null && artistDto.ArtworkIds.Count > 0)
+                {
+                    var artworks = await _context.Artworks
+                        .Where(a => artistDto.ArtworkIds.Contains(a.ArtworkId))
+                        .ToListAsync();
+
+                    if (artworks.Any())
+                    {
+                        foreach (var artwork in artworks)
+                        {
+                            // Link the artwork to the artist
+                            artwork.ArtistId = artist.ArtistId;
+                        }
+
+                        artist.Artworks = artworks;
+                    }
+                }
+
+                // Save changes to persist artist and artworks
+                await _context.SaveChangesAsync();
+
+                // Response creation
+                response.Status = ServiceResponse.ServiceStatus.Created;
+                response.CreatedId = artist.ArtistId;
+                response.Messages.Add("Artist and related artworks successfully created and linked.");
+            }
+            catch (Exception ex)
+            {
+                response.Status = ServiceResponse.ServiceStatus.Error;
+                response.Messages.Add($"An error occurred: {ex.Message}");
+            }
+
+            return response;
         }
         public async Task<ServiceResponse> UpdateArtistDetails(int id, ArtistDto artistDto)
         {
