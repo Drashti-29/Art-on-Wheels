@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ArtOnWheels/.vs
+/.vs
+/.ArtOnWheels/.vs/ProjectEvaluation/
+# Ignore Visual Studio cache and metadata files
+.vs/
+*.suo
+*.v2
+*.json
+*.bin
