@@ -36,7 +36,7 @@ namespace ArtOnWheels.Controllers
         [HttpPut(template: "Update/{id}")]
         public async Task<ServiceResponse> UpdateCarDetails(int id, CarDto carDto)
         {
-            return await _carService.UpdateCarDetails(id, CarDto);
+            return await _carService.UpdateCarDetails(id, carDto);
         }
 
     }

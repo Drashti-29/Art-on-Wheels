@@ -54,80 +54,80 @@ namespace ArtOnWheels.Services
 
         public async Task<ServiceResponse> CreateCar(CarDto carDto)
         {
-            ServiceResponse serviceResponse = new();
+            ServiceResponse response = new();
 
-
-            var artist = await _context.Artists.FindAsync(carDto.CarId);
-            if (artist == null)
-            {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add("Artist not found. Please provide a valid ArtistId.");
-                return serviceResponse;
-            }
-            Car car = new Car()
+            Car car = new Car
             {
                 Type = carDto.Type,
-                ImageUrl= carDto.ImageUrl
+                ImageUrl = carDto.ImageUrl
             };
 
             _context.Car.Add(car);
             await _context.SaveChangesAsync();
 
-            serviceResponse.Status = ServiceResponse.ServiceStatus.Created;
-            serviceResponse.CreatedId = car.CarId;
-            return serviceResponse;
+            response.Status = ServiceResponse.ServiceStatus.Created;
+            response.CreatedId = car.CarId;
+            return response;
         }
 
         public async Task<ServiceResponse> UpdateCarDetails(int id, CarDto carDto)
         {
-            ServiceResponse serviceResponse = new ServiceResponse();
+            ServiceResponse response = new();
 
-            var existingCar = await _context.Car.Include(a => a.CarId).FirstOrDefaultAsync(a => a.CarId == id);
+            Car existingCar = await _context.Car
+                .Include(c => c.Artworks) // Include related artworks
+                .FirstOrDefaultAsync(c => c.CarId == id);
 
             if (existingCar == null)
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                serviceResponse.Messages.Add("Car not found.");
-                return serviceResponse;
+                response.Status = ServiceResponse.ServiceStatus.NotFound;
+                response.Messages.Add("Car not found.");
+                return response;
             }
-            if (carDto.CarId != 0 && carDto.CarId != existingCar.CarId)
+
+            // Update car details
+            existingCar.Type = carDto.Type ?? existingCar.Type;
+            existingCar.ImageUrl = carDto.ImageUrl ?? existingCar.ImageUrl;
+
+            // Update artworks if ArtworkIds are provided
+            if (carDto.ArtworkIds != null && carDto.ArtworkIds.Any())
             {
-                var car = await _context.Car.FindAsync(carDto.CarId);
-                if (car == null)
+                // Find artworks by IDs
+                var artworksToAdd = await _context.Artworks
+                    .Where(artwork => carDto.ArtworkIds.Contains(artwork.ArtworkId))
+                    .ToListAsync();
+
+                // Clear existing artworks and add new ones
+                existingCar.Artworks.Clear();
+                foreach (var artwork in artworksToAdd)
                 {
-                    serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                    serviceResponse.Messages.Add("Car not found.");
-                    return serviceResponse;
+                    existingCar.Artworks.Add(artwork);
                 }
-                existingCar.CarId = carDto.CarId;
-                existingCar.CarId = existingCar.CarId;
             }
-            existingCar.CarId = carDto.CarId;
-            existingCar.Type = carDto.Type;
-            existingCar.ImageUrl = carDto.ImageUrl;
 
             await _context.SaveChangesAsync();
 
-            serviceResponse.Status = ServiceResponse.ServiceStatus.Updated;
-            serviceResponse.Messages.Add($"Car updated successfully. Car: {existingCar.CarId}");
+            response.Status = ServiceResponse.ServiceStatus.Updated;
+            response.Messages.Add("Car updated successfully.");
+            return response;
 
-            return serviceResponse;
         }
         public async Task<ServiceResponse> DeleteCar(int id)
         {
             ServiceResponse response = new();
 
-            var car = await _context.Car.FindAsync(id);
+            Car car = await _context.Car.FindAsync(id);
             if (car == null)
             {
                 response.Status = ServiceResponse.ServiceStatus.NotFound;
-                response.Messages.Add("Car cannot be deleted because it does not exist.");
+                response.Messages.Add("Car not found.");
                 return response;
             }
+
             _context.Car.Remove(car);
             await _context.SaveChangesAsync();
-            response.Status = ServiceResponse.ServiceStatus.Deleted;
 
+            response.Status = ServiceResponse.ServiceStatus.Deleted;
             return response;
         }
     }

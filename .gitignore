@@ -3,6 +3,7 @@
 ################################################################################
 
 /ArtOnWheels/.vs
+/.gitignore
 /.vs
 /.ArtOnWheels/.vs/ProjectEvaluation/
 # Ignore Visual Studio cache and metadata files

@@ -19,7 +19,10 @@ builder.Services.AddControllersWithViews();
 
 // Associate service interfaces with their implementations
 builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<IArtistService,ArtistService>();
 builder.Services.AddScoped<IArtworkService, ArtworkService>();
+builder.Services.AddScoped<IStaffService,StaffService >();
+builder.Services.AddScoped<IExhibitionService,ExhibitionService>();
 
 builder.Services.AddSwaggerGen();
 
