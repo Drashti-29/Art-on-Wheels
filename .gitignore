@@ -3,7 +3,6 @@
 ################################################################################
 
 /ArtOnWheels/.vs
-/.gitignore
 /.vs
 /.ArtOnWheels/.vs/ProjectEvaluation/
 # Ignore Visual Studio cache and metadata files
@@ -12,3 +11,14 @@
 *.v2
 *.json
 *.bin
+# Ignore build output files
+bin/
+obj/
+
+# Ignore specific file types in Debug folder
+*.dll
+*.exe
+*.pdb
+*.cache
+*.csproj.CoreCompileInputs.cache
+*.AssemblyInfoInputs.cache
