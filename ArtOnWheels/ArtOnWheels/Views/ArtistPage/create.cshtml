@@ -1,0 +1,29 @@
+﻿@model ArtOnWheels.Models.ArtistDto
+
+@{
+    ViewData["Title"] = "Create Artist";
+}
+
+<h2>Create Artist</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label class="control-label">First Name:</label>
+        <input name="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Last Name:</label>
+        <input name="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Description of Artist:</label>
+        <input name="ArtistBio" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Email id of Artist:</label>
+        <input name="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

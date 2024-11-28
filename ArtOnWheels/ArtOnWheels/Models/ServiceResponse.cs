@@ -1,6 +1,6 @@
 ﻿namespace ArtOnWheels.Models
 {
-    public class ServiceResponse
+    public class ServiceResponse 
     {
         //Not to be confused with HTTP response!
         //The type of response to give on direct data manipulations (Create, Delete, Update)

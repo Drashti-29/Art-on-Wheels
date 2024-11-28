@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ArtOnWheels.Models.ArtistDto>
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Artists</h1>
+
+<p>
+    <a class="create-button" asp-action="Create">Create New Artist</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Bio</th>
+            <th>Artworks</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artist in Model)
+        {
+            <tr>
+                <td>@artist.FirstName @artist.LastName</td>
+                <td>@artist.Email</td>
+                <td>@artist.ArtistBio</td>
+                <td>
+                    <ul>
+                        @foreach (var artwork in artist.Artworks)
+                        {
+                            <li>@artwork.Title</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = artist.ArtistId })" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = artist.ArtistId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

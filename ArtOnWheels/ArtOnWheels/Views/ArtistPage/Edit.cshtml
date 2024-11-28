@@ -1,0 +1,45 @@
+﻿@model ArtOnWheels.Models.ArtistDto
+
+@{
+    ViewData["Title"] = "Edit Artist";
+}
+
+<h2>Edit Artist</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="ArtistId" value="@Model.ArtistId" />
+
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input type="text" class="form-control" id="FirstName" name="FirstName" value="@Model.FirstName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <input type="text" class="form-control" id="LastName" name="LastName" value="@Model.LastName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ArtistBio">Artist Bio</label>
+        <textarea class="form-control" id="ArtistBio" name="ArtistBio" required>@Model.ArtistBio</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
+    </div>
+
+    <h2>Select Artworks</h2>
+    <div class="form-group">
+        <label for="artworksSelect">Choose Artworks</label>
+        <select asp-for="ArtworkIds" asp-items="@(new MultiSelectList(Model.Artworks, "ArtworkId", "Title", Model.ArtworkIds))" multiple="multiple" class="form-control" id="artworksSelect">
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

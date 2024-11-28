@@ -1,0 +1,17 @@
+﻿@model ArtOnWheels.Models.ArtistDto
+
+@{
+    ViewData["Title"] = "Delete Artist";
+}
+
+<h2>Delete Artist</h2>
+
+<div class="alert alert-danger">
+    <strong>Warning!</strong> Are you sure you want to delete the artist "@Model.FirstName @Model.LastName"?
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="ArtistId" value="@Model.ArtistId" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>
