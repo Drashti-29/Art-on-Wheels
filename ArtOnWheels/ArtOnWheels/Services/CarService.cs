@@ -5,16 +5,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ArtOnWheels.Services
 {
-
+    /// <summary>
+    /// Provides services for managing cars in the ArtOnWheels application.
+    /// Includes CRUD operations and managing relationships with associated artworks.
+    /// </summary>
     public class CarService : ICarService
     {
         private readonly ApplicationDbContext _context;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CarService"/> class.
+        /// </summary>
+        /// <param name="context">Database context for accessing car and related data.</param>
         public CarService(ApplicationDbContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Retrieves a list of all cars with their associated artwork details.
+        /// </summary>
+        /// <returns>An enumerable collection of <see cref="CarDto"/> objects.</returns>
         public async Task<IEnumerable<CarDto>> ListCars()
         {
             IEnumerable<CarDto> cars = await _context.Car
@@ -28,6 +39,11 @@ namespace ArtOnWheels.Services
                 }).ToListAsync();
             return cars;
         }
+        /// <summary>
+        /// Retrieves a car by its ID, including associated artworks and exhibitions.
+        /// </summary>
+        /// <param name="id">The ID of the car to retrieve.</param>
+        /// <returns>A <see cref="CarDto"/> object if the car is found, otherwise null.</returns>
         public async Task<CarDto> GetCar(int id)
         {
             // Fetch the car
@@ -52,6 +68,11 @@ namespace ArtOnWheels.Services
             return carDto;
         }
 
+        /// <summary>
+        /// Creates a new car in the database.
+        /// </summary>
+        /// <param name="carDto">The details of the car to create.</param>
+        /// <returns>A <see cref="ServiceResponse"/> indicating the operation's status.</returns>
         public async Task<ServiceResponse> CreateCar(CarDto carDto)
         {
             ServiceResponse response = new();
@@ -70,6 +91,12 @@ namespace ArtOnWheels.Services
             return response;
         }
 
+        /// <summary>
+        /// Updates the details of an existing car.
+        /// </summary>
+        /// <param name="id">The ID of the car to update.</param>
+        /// <param name="carDto">The updated details of the car.</param>
+        /// <returns>A <see cref="ServiceResponse"/> indicating the operation's status.</returns>
         public async Task<ServiceResponse> UpdateCarDetails(int id, CarDto carDto)
         {
             ServiceResponse response = new();
@@ -112,6 +139,12 @@ namespace ArtOnWheels.Services
             return response;
 
         }
+
+        /// <summary>
+        /// Deletes a car by its ID from the database.
+        /// </summary>
+        /// <param name="id">The ID of the car to delete.</param>
+        /// <returns>A <see cref="ServiceResponse"/> indicating the operation's status.</returns>
         public async Task<ServiceResponse> DeleteCar(int id)
         {
             ServiceResponse response = new();

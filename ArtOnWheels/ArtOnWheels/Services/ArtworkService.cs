@@ -5,14 +5,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ArtOnWheels.Services
 {
+    /// <summary>
+    /// Service class for managing artworks. Provides methods to list, get, create, update, and delete artworks.
+    /// </summary>
     public class ArtworkService : IArtworkService
     {
         private readonly ApplicationDbContext _context;
 
+        /// <summary>
+        /// Constructor that accepts the application database context for dependency injection.
+        /// </summary>
         public ArtworkService(ApplicationDbContext context)
         {
             _context = context;
         }
+        /// <summary>
+        /// Lists all artworks including their artist and exhibition details.
+        /// </summary>
+        /// <returns>List of ArtworkDto objects</returns>
         public async Task<IEnumerable<ArtworkDto>> ListArtworks()
         {
             IEnumerable<ArtworkDto> artworks = await _context.Artworks
@@ -29,6 +39,11 @@ namespace ArtOnWheels.Services
                 }).ToListAsync();
             return artworks;
         }
+        /// <summary>
+        /// Retrieves a single artwork by its ID, including its artist and exhibition details.
+        /// </summary>
+        /// <param name="id">The ID of the artwork to retrieve</param>
+        /// <returns>ArtworkDto object containing the artwork details</returns>
         public async Task<ArtworkDto> GetArtwork(int id)
         {
             // Fetch the artwork with the associated artist and exhibitions using eager loading
@@ -55,6 +70,11 @@ namespace ArtOnWheels.Services
             };
             return artworkDto;
         }
+         /// <summary>
+         /// Creates a new artwork and associates it with an artist.
+         /// </summary>
+         /// <param name="artworkDto">Data transfer object containing artwork details</param>
+         /// <returns>A ServiceResponse indicating the success or failure of the operation</returns>
         public async Task<ServiceResponse> CreateArtwork(ArtworkDto artworkDto)
         {
             ServiceResponse serviceResponse = new();
@@ -85,6 +105,13 @@ namespace ArtOnWheels.Services
 
             return serviceResponse;
         }
+
+        /// <summary>
+        /// Updates the details of an existing artwork.
+        /// </summary>
+        /// <param name="id">The ID of the artwork to update</param>
+        /// <param name="artworkDto">Data transfer object containing updated artwork details</param>
+        /// <returns>A ServiceResponse indicating the success or failure of the operation</returns>
         public async Task<ServiceResponse> UpdateArtworkDetails(int id, ArtworkDto artworkDto)
         {
             ServiceResponse serviceResponse = new ServiceResponse();
@@ -121,6 +148,12 @@ namespace ArtOnWheels.Services
 
             return serviceResponse;
         }
+
+        /// <summary>
+        /// Deletes an artwork by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the artwork to delete</param>
+        /// <returns>A ServiceResponse indicating the success or failure of the operation</returns>
         public async Task<ServiceResponse> DeleteArtwork(int id)
         {
             ServiceResponse response = new();

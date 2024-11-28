@@ -5,14 +5,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ArtOnWheels.Services
 {
+    /// <summary>
+    /// Service class for managing staff-related operations in the Art On Wheels application.
+    /// </summary>
     public class StaffService :  IStaffService
     {
         private readonly ApplicationDbContext _context;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StaffService"/> class with the specified database context.
+        /// </summary>
+        /// <param name="context">The database context to be used for data access.</param>
         public StaffService(ApplicationDbContext context)
         {
             _context = context;
         }
+
+        /// <summary>
+        /// Retrieves a list of all staff members with their associated exhibitions.
+        /// </summary>
+        /// <returns>A task representing the asynchronous operation. The task result contains a list of staff details in <see cref="StaffDto"/> format.</returns>
         public async Task<IEnumerable<StaffDto>> ListStaffs()
         {
             List<Staff> staffList = await _context.Staff.Include(s => s.Exhibition).ToListAsync();
@@ -32,6 +44,12 @@ namespace ArtOnWheels.Services
             return staffDtos;
 
         }
+
+        /// <summary>
+        /// Retrieves details of a specific staff member by ID, including associated exhibition information.
+        /// </summary>
+        /// <param name="id">The unique identifier of the staff member.</param>
+        /// <returns>A task representing the asynchronous operation. The task result contains the details of the staff member in <see cref="StaffDto"/> format, or null if not found.</returns>
         public async Task<StaffDto> GetStaff(int id)
         {
             var staff = await _context.Staff
@@ -51,6 +69,12 @@ namespace ArtOnWheels.Services
                 ExhibitionName = staff.Exhibition.ExhibitionName
             };
         }
+
+        /// <summary>
+        /// Creates a new staff member record.
+        /// </summary>
+        /// <param name="staffDto">The details of the staff member to be created.</param>
+        /// <returns>A task representing the asynchronous operation. The task result contains a <see cref="ServiceResponse"/> with the status of the operation.</returns>
         public async Task<ServiceResponse> CreateStaff(StaffDto staffDto)
         {
             ServiceResponse serviceResponse = new();
@@ -71,6 +95,13 @@ namespace ArtOnWheels.Services
             serviceResponse.CreatedId = staff.StaffId;
             return serviceResponse;
         }
+
+        /// <summary>
+        /// Updates the details of an existing staff member.
+        /// </summary>
+        /// <param name="id">The unique identifier of the staff member to update.</param>
+        /// <param name="staffDto">The updated details of the staff member.</param>
+        /// <returns>A task representing the asynchronous operation. The task result contains a <see cref="ServiceResponse"/> with the status of the operation.</returns>
         public async Task<ServiceResponse> UpdateStaff(int id, StaffDto staffDto)
         {
             ServiceResponse serviceResponse = new();
@@ -108,6 +139,12 @@ namespace ArtOnWheels.Services
             return serviceResponse;
 
         }
+
+        /// <summary>
+        /// Deletes a specific staff member record by ID.
+        /// </summary>
+        /// <param name="id">The unique identifier of the staff member to delete.</param>
+        /// <returns>A task representing the asynchronous operation. The task result contains a <see cref="ServiceResponse"/> with the status of the operation.</returns>
         public async Task<ServiceResponse> DeleteStaff(int id)
         {
             ServiceResponse response = new();

@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ArtOnWheels.Services
 {
+    /// <summary>
+    /// Service class for managing exhibitions.
+    /// Provides methods for creating, retrieving, updating, and deleting exhibitions.
+    /// </summary>
     public class ExhibitionService : IExhibitionService
     {
         private readonly ApplicationDbContext _context;
@@ -15,7 +19,10 @@ namespace ArtOnWheels.Services
             _context = context;
         }
 
-        // List all exhibitions
+        /// <summary>
+        /// Retrieves a list of all exhibitions.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation. The task result contains an enumerable of <see cref="ExhibitionDto"/> objects.</returns>
         public async Task<IEnumerable<ExhibitionDto>> ListExhibitions()
         {
             var exhibitions = await _context.Exhibitions
@@ -35,10 +42,14 @@ namespace ArtOnWheels.Services
             return exhibitionDtos;
         }
 
-        // Get details of a single exhibition by ID
+        /// <summary>
+        /// Retrieves details of a single exhibition by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the exhibition.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the <see cref="ExhibitionDto"/> object or null if not found.</returns>
         public async Task<ExhibitionDto> GetExhibition(int id)
         {
-            Exhibition exhibition = await _context.Exhibitions
+            var exhibition = await _context.Exhibitions
                 .Include(e => e.Artworks) // Include related artworks
                 .Include(e => e.Staffs) // Include related staffs
                 .FirstOrDefaultAsync(e => e.ExhibitionId == id);
@@ -58,7 +69,11 @@ namespace ArtOnWheels.Services
             };
         }
 
-        // Create a new exhibition
+        /// <summary>
+        /// Creates a new exhibition.
+        /// </summary>
+        /// <param name="exhibitionDto">The DTO containing the details of the exhibition to create.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains a <see cref="ServiceResponse"/> indicating the status of the operation.</returns>
         public async Task<ServiceResponse> CreateExhibition(ExhibitionDto exhibitionDto)
         {
             ServiceResponse response = new();
@@ -80,12 +95,17 @@ namespace ArtOnWheels.Services
             return response;
         }
 
-        // Update exhibition details
+        /// <summary>
+        /// Updates the details of an existing exhibition.
+        /// </summary>
+        /// <param name="id">The ID of the exhibition to update.</param>
+        /// <param name="exhibitionDto">The DTO containing the updated details of the exhibition.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains a <see cref="ServiceResponse"/> indicating the status of the operation.</returns>
         public async Task<ServiceResponse> UpdateExhibitionDetails(int id, ExhibitionDto exhibitionDto)
         {
             ServiceResponse response = new();
 
-            Exhibition existingExhibition = await _context.Exhibitions
+            var existingExhibition = await _context.Exhibitions
                 .Include(e => e.Artworks) // Include related artworks
                 .Include(e => e.Staffs) // Include related staffs
                 .FirstOrDefaultAsync(e => e.ExhibitionId == id);
@@ -109,7 +129,11 @@ namespace ArtOnWheels.Services
             return response;
         }
 
-        // Delete an exhibition by ID
+        /// <summary>
+        /// Deletes an exhibition by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the exhibition to delete.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains a <see cref="ServiceResponse"/> indicating the status of the operation.</returns>
         public async Task<ServiceResponse> DeleteExhibition(int id)
         {
             ServiceResponse response = new();
