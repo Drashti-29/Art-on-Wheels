@@ -1,0 +1,28 @@
+﻿@model ArtOnWheels.Models.StaffDto
+
+<h2>Add Staff</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>First Name</label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label>Last Name</label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label>Position</label>
+        <input asp-for="Position" />
+    </div>
+    <div>
+        <label>Contact</label>
+        <input asp-for="Contact" />
+    </div>
+    <div>
+        <label>Exhibition</label>
+        <input asp-for="ExhibitionId" />
+    </div>
+    <button type="submit" value="Create" >Save</button>
+    <a href="@Url.Action("List", "StaffPage")">Cancel</a>
+</form>
