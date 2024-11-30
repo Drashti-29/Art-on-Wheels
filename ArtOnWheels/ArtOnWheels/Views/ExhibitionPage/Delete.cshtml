@@ -1,0 +1,15 @@
+﻿@model ArtOnWheels.Models.ExhibitionDto
+
+@{
+    ViewData["Title"] = "Delete Exhibition";
+}
+
+<h1>Delete Exhibition</h1>
+
+<p>Are you sure you want to delete the exhibition "<strong>@Model.ExhibitionName</strong>"?</p>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="ExhibitionId" type="hidden" value="@Model.ExhibitionId" />
+    <button type="submit">Confirm</button>
+    <a href="@Url.Action("List", "ExhibitionPage")">Cancel</a>
+</form>

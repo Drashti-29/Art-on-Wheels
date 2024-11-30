@@ -1,0 +1,26 @@
+﻿@model ArtOnWheels.Models.ExhibitionDto
+
+@{
+    ViewData["Title"] = "Edit Exhibition";
+}
+
+<h1>Edit Exhibition</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="ExhibitionName">Exhibition Name</label>
+        <input type="text" id="ExhibitionName" name="ExhibitionName" class="form-control" value="@Model.ExhibitionName" />
+    </div>
+
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" id="Location" name="Location" class="form-control" value="@Model.Location" />
+    </div>
+
+    <div class="form-group">
+        <label for="Date">Date</label>
+        <input type="date" id="Date" name="Date" class="form-control" value="@Model.Date.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

@@ -1,0 +1,26 @@
+﻿@model ArtOnWheels.Models.ExhibitionDto
+
+@{
+    ViewData["Title"] = "Create Exhibition";
+}
+
+<h1>Create Exhibition</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="ExhibitionName">Exhibition Name</label>
+        <input type="text" id="ExhibitionName" name="ExhibitionName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" id="Location" name="Location" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Date">Date</label>
+        <input type="date" id="Date" name="Date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
