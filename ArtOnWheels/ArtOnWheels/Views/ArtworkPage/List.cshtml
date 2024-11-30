@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ArtOnWheels.Models.ArtworkDto>
+
+<h2>Artwork List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artwork in Model)
+        {
+            <tr>
+                <td>@artwork.Title</td>
+                <td>@artwork.ArtistName</td>
+                <td>
+                    <a href="@Url.Action("Details", "ArtworkPage", new { id = artwork.ArtworkId })">View</a> |
+                    <a href="@Url.Action("Edit", "ArtworkPage", new { id = artwork.ArtworkId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "ArtworkPage", new { id = artwork.ArtworkId })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("Create", "ArtworkPage")">Add New Artwork</a>

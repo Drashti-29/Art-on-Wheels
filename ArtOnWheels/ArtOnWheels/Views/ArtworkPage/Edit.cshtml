@@ -1,0 +1,14 @@
+﻿@model ArtOnWheels.Models.ArtworkDto
+
+<h2>Edit Artwork</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.ArtworkId" />
+    <label>Title:</label>
+    <input type="text" name="Title" value="@Model.Title" />
+    <label>Artist:</label>
+    <input type="text" name="ArtistName" value="@Model.ArtistName" />
+    <label>Description:</label>
+    <textarea name="Description">@Model.Description</textarea>
+    <button type="submit">Update</button>
+</form>
+<a href="@Url.Action("List", "ArtworkPage")">Back to List</a>

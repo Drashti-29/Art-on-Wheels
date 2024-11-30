@@ -92,8 +92,7 @@ namespace ArtOnWheels.Services
                 Title = artworkDto.Title,
                 CreationYear = artworkDto.CreationYear,
                 Description = artworkDto.Description,
-                Price = artworkDto.Price,
-                ArtistId = artworkDto.ArtistId
+                Price = artworkDto.Price
             };
 
             _context.Artworks.Add(artwork);

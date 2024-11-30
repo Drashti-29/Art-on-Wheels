@@ -1,0 +1,7 @@
+﻿@model ArtOnWheels.Models.ArtworkDto
+
+<h2>Artwork Details</h2>
+<p><strong>Title:</strong> @Model.Title</p>
+<p><strong>Artist:</strong> @Model.ArtistName</p>
+<p><strong>Description:</strong> @Model.Description</p>
+<a href="@Url.Action("List", "ArtworkPage")">Back to List</a>
