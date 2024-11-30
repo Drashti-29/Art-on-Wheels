@@ -9,6 +9,7 @@ namespace ArtOnWheels.Interfaces
     /// - Get details of a specific car by ID
     /// - Add a new car
     /// - Update details of an existing car
+    /// - Delete a car by ID
     /// </summary>
     public interface ICarService
     {
@@ -39,5 +40,12 @@ namespace ArtOnWheels.Interfaces
         /// <param name="carDto">A <see cref="CarDto"/> object containing the updated car details.</param>
         /// <returns>A <see cref="ServiceResponse"/> indicating the result of the update operation.</returns>
         Task<ServiceResponse> UpdateCarDetails(int id, CarDto carDto);
+
+        /// <summary>
+        /// Deletes a car by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the car to delete.</param>
+        /// <returns>A <see cref="ServiceResponse"/> indicating the result of the delete operation.</returns>
+        Task<ServiceResponse> DeleteCar(int id);
     }
 }

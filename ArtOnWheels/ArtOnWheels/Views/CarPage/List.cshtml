@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ArtOnWheels.Models.CarDto>
+<h1>Car List</h1>
+<a asp-action="Create" class="btn btn-primary">Add New Car</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Type of car</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Type</td>
+                <td><img src="@car.ImageUrl" alt="Car Image" style="width:100px;" /></td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@car.CarId" class="btn btn-secondary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@car.CarId" class="btn btn-danger">Delete</a>
+                    <a asp-action="Details" asp-route-id="@car.CarId" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

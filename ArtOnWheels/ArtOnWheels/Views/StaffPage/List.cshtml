@@ -1,33 +1,46 @@
 ﻿@model IEnumerable<ArtOnWheels.Models.StaffDto>
 
-<h2>Staff List</h2>
-<a href="@Url.Action("Create", "StaffPage")">Add New Staff</a>
+@{
+    ViewData["Title"] = "Staff List";
+}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Contact</th>
-            <th>Exhibition</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var staff in Model)
-        {
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+
+    <!-- Add New Staff Button -->
+    <div class="form-group">
+        <a href="@Url.Action("Create", "StaffPage")" class="btn btn-success">Add New Staff</a>
+    </div>
+
+    <table class="table">
+        <thead>
             <tr>
-                <td>@staff.FirstName</td>
-                <td>@staff.LastName</td>
-                <td>@staff.Position</td>
-                <td>@staff.Contact</td>
-                <td>@staff.ExhibitionName</td>
-                <td>
-                    <a href="@Url.Action("Edit", "StaffPage", new { id = staff.StaffId })">Edit</a> |
-                    <a href="@Url.Action("Delete", "StaffPage", new { id = staff.StaffId })">Delete</a>
-                </td>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Position</th>
+                <th>Contact</th>
+                <th>Exhibition</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var staff in Model)
+            {
+                <tr>
+                    <td>@staff.StaffId</td>
+                    <td>@staff.FirstName</td>
+                    <td>@staff.LastName</td>
+                    <td>@staff.Position</td>
+                    <td>@staff.Contact</td>
+                    <td>@staff.ExhibitionName</td>
+                    <td>
+                        <a href="@Url.Action("Details", "StaffPage", new { id = staff.StaffId })" class="btn btn-info">Details</a>
+                        <a href="@Url.Action("Edit", "StaffPage", new { id = staff.StaffId })" class="btn btn-warning">Edit</a>
+                        <a href="@Url.Action("Delete", "StaffPage", new { id = staff.StaffId })" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

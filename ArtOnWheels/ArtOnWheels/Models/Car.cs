@@ -41,5 +41,5 @@ namespace ArtOnWheels.Models
         // Optionally, collection of ArtworkDto objects for detailed information about each artwork
         public List<String> ArtworkTiles { get; set; }
 
-          }
+     }
 }
