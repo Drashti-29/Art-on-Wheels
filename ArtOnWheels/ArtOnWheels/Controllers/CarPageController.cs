@@ -7,9 +7,6 @@ namespace ArtOnWheels.Controllers
     public class CarPageController : Controller
     {
         private readonly ICarService _carService;
-
-
-
         public CarPageController(ICarService carService)
         {
             _carService = carService;
@@ -20,21 +17,12 @@ namespace ArtOnWheels.Controllers
             return RedirectToAction("List");
         }
 
-
-
-
-
-
-
-
-
         public async Task<IActionResult> List()
         {
             return View(await _carService.ListCars());
         }
 
         [HttpGet]
-
         public async Task<IActionResult> Details(int id)
         {
             var car = await _carService.GetCar(id);
@@ -49,10 +37,6 @@ namespace ArtOnWheels.Controllers
         {
             return View();
         }
-
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CarDto carDto)
@@ -69,11 +53,6 @@ namespace ArtOnWheels.Controllers
             }
         }
 
-
-
-
-
-
         public async Task<IActionResult> Edit(int id)
         {
             var car = await _carService.GetCar(id);
@@ -83,10 +62,6 @@ namespace ArtOnWheels.Controllers
             }
             return View(car);
         }
-
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, CarDto carDto)
@@ -103,7 +78,6 @@ namespace ArtOnWheels.Controllers
             }
         }
 
-
         public async Task<IActionResult> Delete(int id)
         {
             var car = await _carService.GetCar(id);
@@ -113,7 +87,6 @@ namespace ArtOnWheels.Controllers
             }
             return View(car);
         }
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

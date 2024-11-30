@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ArtOnWheels.Models.ExhibitionDto>
+
+@{
+    ViewData["Title"] = "Exhibitions List";
+}
+
+<h1>Exhibitions</h1>
+
+<div class="form-group">
+	<a href="@Url.Action("Create", "ExhibitionPage")" class="btn btn-success">Add New Exhibition</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Exhibition Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var exhibition in Model)
+        {
+            <tr>
+                <td>@exhibition.ExhibitionName</td>
+                <td>@exhibition.Location</td>
+                <td>@exhibition.Date.ToString("d")</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = exhibition.ExhibitionId })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", new { id = exhibition.ExhibitionId })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = exhibition.ExhibitionId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
