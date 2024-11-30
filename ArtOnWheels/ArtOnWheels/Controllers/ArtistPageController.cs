@@ -124,19 +124,19 @@ namespace DigitalArtShowcase.Controllers
             }
         }
 
-            /// <summary>
-            /// Displays a confirmation page to delete an artist.
-            /// </summary>
-            /// <param name="id">The ID of the artist to delete.</param>
-            /// <returns>A view confirming the delete action.</returns>
-            public async Task<IActionResult> Delete(int id)
+        /// <summary>
+        /// Displays a confirmation page to delete an artist.
+        /// </summary>
+        /// <param name="id">The ID of the artist to delete.</param>
+        /// <returns>A view confirming the delete action.</returns>
+        public async Task<IActionResult> Delete(int id)
         {
-            var artist = await _artistService.GetArtist(id);
-            if (artist == null)
-            {
-                return NotFound();
-            }
-            return View(artist);
+        var artist = await _artistService.GetArtist(id);
+        if (artist == null)
+        {
+            return NotFound();
+        }
+        return View(artist);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace DigitalArtShowcase.Controllers
             else
             {
                 return View("Error", new ErrorViewModel() { Errors = response.Messages });
-            };
+            }
         }
     }
 }

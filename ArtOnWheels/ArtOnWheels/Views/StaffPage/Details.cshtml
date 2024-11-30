@@ -1,0 +1,35 @@
+﻿@model ArtOnWheels.Models.StaffDto
+
+@{
+    ViewData["Title"] = "Staff Details";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <div class="staff-details">
+        <div class="form-group">
+            <label for="FirstName">First Name:</label>
+            <p id="FirstName">@Model.FirstName</p>
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            <p id="LastName">@Model.LastName</p>
+        </div>
+        <div class="form-group">
+            <label for="Position">Position:</label>
+            <p id="Position">@Model.Position</p>
+        </div>
+        <div class="form-group">
+            <label for="Contact">Contact:</label>
+            <p id="Contact">@Model.Contact</p>
+        </div>
+        <div class="form-group">
+            <label for="ExhibitionName">Exhibition:</label>
+            <p id="ExhibitionName">@Model.ExhibitionName</p>
+        </div>
+
+        <div class="form-group">
+            <a href="@Url.Action("List", "StaffPage")" class="btn btn-primary">Back to List</a>
+        </div>
+    </div>
+</div>
