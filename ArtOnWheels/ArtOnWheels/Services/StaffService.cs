@@ -84,8 +84,7 @@ namespace ArtOnWheels.Services
                 FirstName = staffDto.FirstName,
                 LastName = staffDto.LastName,
                 Position = staffDto.Position,
-                Contact = staffDto.Contact,
-                ExhibitionId = staffDto.ExhibitionId
+                Contact = staffDto.Contact
             };
 
             _context.Staff.Add(staff);

@@ -1,0 +1,18 @@
+﻿@model ArtOnWheels.Models.CarDto
+
+<h1>Car Details</h1>
+<div>
+    <h2>@Model.Type</h2>
+    <img src="@Model.ImageUrl" alt="Car Image" style="width:300px;" />
+</div>
+
+<div>
+    @foreach (var artwork in Model.ArtworkTiles)
+    {
+        <div style="margin-top: 20px;">
+            <h3>@Model.ArtworkTiles</h3>
+        </div>
+    }
+</div>
+
+<a asp-action="List" class="btn btn-secondary">Back to List</a>

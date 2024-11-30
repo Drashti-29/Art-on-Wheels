@@ -1,0 +1,16 @@
+﻿@model ArtOnWheels.Models.CarDto
+<h1>Edit Car</h1>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="CarId" />
+    <div class="form-group">
+        <label>Type</label>
+        <input asp-for="Type" class="form-control" />
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Image URL</label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

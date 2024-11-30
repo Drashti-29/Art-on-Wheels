@@ -1,0 +1,27 @@
+﻿@model ArtOnWheels.Models.StaffDto
+
+<h2>Delete Staff</h2>
+
+<p>Are you sure you want to delete the following staff member?</p>
+
+<div>
+    <label>First Name:</label> @Model.FirstName
+</div>
+<div>
+    <label>Last Name:</label> @Model.LastName
+</div>
+<div>
+    <label>Position:</label> @Model.Position
+</div>
+<div>
+    <label>Contact:</label> @Model.Contact
+</div>
+<div>
+    <label>Exhibition:</label> @Model.ExhibitionName
+</div>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="StaffId" type="hidden" value="@Model.StaffId"/>
+    <button type="submit">Confirm</button>
+    <a href="@Url.Action("List", "StaffPage")">Cancel</a>
+</form>

@@ -23,3 +23,17 @@ obj/
 *.cache
 *.csproj.CoreCompileInputs.cache
 *.AssemblyInfoInputs.cache
+
+# Ignore Visual Studio temporary files
+ArtOnWheels/ArtOnWheels/obj/
+
+# Ignore Bootstrap library files
+ArtOnWheels/wwwroot/lib/bootstrap/
+
+# Ignore jQuery library files
+ArtOnWheels/wwwroot/lib/jquery/
+
+# Ignore jQuery Validation library files
+ArtOnWheels/wwwroot/lib/jquery-validation/
+ArtOnWheels/wwwroot/lib/jquery-validation-unobtrusive/
+
