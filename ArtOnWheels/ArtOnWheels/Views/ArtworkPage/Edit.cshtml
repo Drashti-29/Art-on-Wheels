@@ -1,14 +1,32 @@
 ﻿@model ArtOnWheels.Models.ArtworkDto
 
 <h2>Edit Artwork</h2>
+
 <form asp-action="Edit" method="post">
-    <input type="hidden" name="Id" value="@Model.ArtworkId" />
-    <label>Title:</label>
-    <input type="text" name="Title" value="@Model.Title" />
-    <label>Artist:</label>
-    <input type="text" name="ArtistName" value="@Model.ArtistName" />
-    <label>Description:</label>
-    <textarea name="Description">@Model.Description</textarea>
-    <button type="submit">Update</button>
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" id="Description" name="Description" required>@Model.Description</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" class="form-control" id="Price" name="Price" value="@Model.Price" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CreationYear">Creation Year</label>
+        <input type="number" class="form-control" id="CreationYear" name="CreationYear" value="@Model.CreationYear" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ImageUrl">Image URL</label>
+        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" value="@Model.ImageUrl" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
-<a href="@Url.Action("List", "ArtworkPage")">Back to List</a>

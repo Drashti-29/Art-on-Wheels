@@ -33,6 +33,7 @@ namespace ArtOnWheels.Services
                     Description = artwork.Description,
                     Price = artwork.Price,
                     CreationYear = artwork.CreationYear,
+                    ImageUrl = artwork.ImageUrl,
                     ArtistId = artwork.ArtistId,
                     ArtistName = artwork.Artist.FirstName,
                     ExhibitionNames = artwork.Exhibitions.Select(exhibitiion => exhibitiion.ExhibitionName).ToList()
@@ -64,6 +65,7 @@ namespace ArtOnWheels.Services
                 Description = artwork.Description,
                 Price = artwork.Price,
                 CreationYear = artwork.CreationYear,
+                ImageUrl = artwork.ImageUrl,
                 ArtistName = artwork.Artist.FirstName,
                 // Ensure Exhibitions is initialized to prevent null reference exception
                 ExhibitionNames = artwork.Exhibitions.Select(exhibitiion => exhibitiion.ExhibitionName).ToList()
@@ -139,6 +141,7 @@ namespace ArtOnWheels.Services
             existingArtwork.Price = artworkDto.Price;
             existingArtwork.CreationYear = artworkDto.CreationYear;
             existingArtwork.Description = artworkDto.Description;
+            existingArtwork.ImageUrl = artworkDto.ImageUrl;
 
             await _context.SaveChangesAsync();
 
