@@ -1,5 +1,6 @@
 ﻿using ArtOnWheels.Interfaces;
 using ArtOnWheels.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 public class StaffPageController : Controller
@@ -21,11 +22,6 @@ public class StaffPageController : Controller
         return View(staffs);
     }
 
-    public IActionResult Create()
-    {
-        return View();
-    }
-
     [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
@@ -37,7 +33,14 @@ public class StaffPageController : Controller
         return View(staff);
     }
 
+    [Authorize(Roles = "Admin")]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create(StaffDto staffDto)
     {
         ServiceResponse response = await _staffService.CreateStaff(staffDto);
@@ -52,6 +55,7 @@ public class StaffPageController : Controller
         }
     }
 
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int id)
     {
         var staff = await _staffService.GetStaff(id);
@@ -62,6 +66,7 @@ public class StaffPageController : Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int id, StaffDto staffDto)
     {
         ServiceResponse response = await _staffService.UpdateStaff(id, staffDto);
@@ -76,6 +81,8 @@ public class StaffPageController : Controller
         }
     }
 
+    [Authorize(Roles = "Admin")]
+
     public async Task<IActionResult> Delete(int id)
     {
         var staff = await _staffService.GetStaff(id);
@@ -86,6 +93,7 @@ public class StaffPageController : Controller
     }
 
     [HttpPost, ActionName("Delete")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
         ServiceResponse response = await _staffService.DeleteStaff(id);

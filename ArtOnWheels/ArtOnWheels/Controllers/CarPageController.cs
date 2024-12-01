@@ -1,5 +1,6 @@
 ﻿using ArtOnWheels.Interfaces;
 using ArtOnWheels.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtOnWheels.Controllers
@@ -33,12 +34,14 @@ namespace ArtOnWheels.Controllers
             return View(car);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(CarDto carDto)
         {
             ServiceResponse response = await _carService.CreateCar(carDto);
@@ -53,6 +56,7 @@ namespace ArtOnWheels.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var car = await _carService.GetCar(id);
@@ -64,6 +68,7 @@ namespace ArtOnWheels.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, CarDto carDto)
         {
             ServiceResponse response = await _carService.UpdateCarDetails(id, carDto);
@@ -78,6 +83,7 @@ namespace ArtOnWheels.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var car = await _carService.GetCar(id);
@@ -89,6 +95,7 @@ namespace ArtOnWheels.Controllers
         }
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             ServiceResponse response = await _carService.DeleteCar(id);

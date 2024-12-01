@@ -1,5 +1,6 @@
 ﻿using ArtOnWheels.Interfaces;
 using ArtOnWheels.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalArtShowcase.Controllers
@@ -61,6 +62,7 @@ namespace DigitalArtShowcase.Controllers
         /// Displays the form to create a new artist.
         /// </summary>
         /// <returns>A view with the create artist form.</returns>
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -73,6 +75,7 @@ namespace DigitalArtShowcase.Controllers
         /// <returns>Redirects to the index page on success.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(ArtistDto artistDto)
         {
             ServiceResponse response = await _artistService.CreateArtist(artistDto);
@@ -92,6 +95,7 @@ namespace DigitalArtShowcase.Controllers
         /// </summary>
         /// <param name="id">The ID of the artist to edit.</param>
         /// <returns>A view with the edit artist form.</returns>
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var artist = await _artistService.GetArtist(id);
@@ -110,6 +114,7 @@ namespace DigitalArtShowcase.Controllers
         /// <returns>Redirects to the index page on success.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, ArtistDto artistDto)
         {
             ServiceResponse response = await _artistService.UpdateArtistDetails(id, artistDto);
@@ -129,6 +134,7 @@ namespace DigitalArtShowcase.Controllers
         /// </summary>
         /// <param name="id">The ID of the artist to delete.</param>
         /// <returns>A view confirming the delete action.</returns>
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
         var artist = await _artistService.GetArtist(id);
@@ -146,6 +152,7 @@ namespace DigitalArtShowcase.Controllers
         /// <returns>Redirects to the index page on success.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             ServiceResponse response = await _artistService.DeleteArtist(id);

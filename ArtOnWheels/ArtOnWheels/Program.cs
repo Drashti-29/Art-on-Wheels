@@ -13,8 +13,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultUI()
+    .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
 
 // Associate service interfaces with their implementations
@@ -45,6 +47,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,6 +1,7 @@
 ﻿using ArtOnWheels.Interfaces;
 using ArtOnWheels.Models;
 using ArtOnWheels.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtOnWheels.Controllers
@@ -33,6 +34,8 @@ namespace ArtOnWheels.Controllers
             }
             return View(artwork);
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -40,6 +43,7 @@ namespace ArtOnWheels.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(ArtworkDto artworkDto)
         {
             ServiceResponse response = await _artworkService.CreateArtwork(artworkDto);
@@ -55,6 +59,7 @@ namespace ArtOnWheels.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id)
         {
             var artworkDto = await _artworkService.GetArtwork(id);
@@ -66,6 +71,7 @@ namespace ArtOnWheels.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, ArtworkDto artworkDto)
         {
             ServiceResponse response = await _artworkService.UpdateArtworkDetails(id, artworkDto);
@@ -80,7 +86,7 @@ namespace ArtOnWheels.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var artwork = await _artworkService.GetArtwork(id);

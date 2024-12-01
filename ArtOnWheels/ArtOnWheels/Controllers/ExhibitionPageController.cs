@@ -1,5 +1,6 @@
 ﻿using ArtOnWheels.Interfaces;
 using ArtOnWheels.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArtOnWheels.Controllers
@@ -32,6 +33,8 @@ namespace ArtOnWheels.Controllers
                 return View(exhibition);
             }
 
+        
+            [Authorize(Roles = "Admin")]
             public IActionResult Create()
             {
                 return View();
@@ -39,6 +42,7 @@ namespace ArtOnWheels.Controllers
 
             [HttpPost]
             [ValidateAntiForgeryToken]
+            [Authorize(Roles = "Admin")]
             public async Task<IActionResult> Create(ExhibitionDto exhibitionDto)
             {
                 var response = await _exhibitionService.CreateExhibition(exhibitionDto);
@@ -48,6 +52,9 @@ namespace ArtOnWheels.Controllers
                     return View("Error", new ErrorViewModel { Errors = response.Messages });
             }
 
+        
+            
+            [Authorize(Roles = "Admin")]
             public async Task<IActionResult> Edit(int id)
             {
                 var exhibition = await _exhibitionService.GetExhibition(id);
@@ -57,6 +64,7 @@ namespace ArtOnWheels.Controllers
 
             [HttpPost]
             [ValidateAntiForgeryToken]
+            [Authorize(Roles = "Admin")]
             public async Task<IActionResult> Edit(int id, ExhibitionDto exhibitionDto)
             {
                 var response = await _exhibitionService.UpdateExhibitionDetails(id, exhibitionDto);
@@ -65,7 +73,8 @@ namespace ArtOnWheels.Controllers
                 else
                     return View("Error", new ErrorViewModel { Errors = response.Messages });
             }
-
+        
+            [Authorize(Roles = "Admin")]
             public async Task<IActionResult> Delete(int id)
             {
                 var exhibition = await _exhibitionService.GetExhibition(id);
@@ -75,6 +84,7 @@ namespace ArtOnWheels.Controllers
 
             [HttpPost, ActionName("Delete")]
             [ValidateAntiForgeryToken]
+            [Authorize(Roles = "Admin")]
             public async Task<IActionResult> DeleteConfirmed(int id)
             {
                 var response = await _exhibitionService.DeleteExhibition(id);
@@ -83,7 +93,6 @@ namespace ArtOnWheels.Controllers
                 else
                     return View("Error", new ErrorViewModel { Errors = response.Messages });
             }
-
     }
 }
 
