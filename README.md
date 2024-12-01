@@ -9,7 +9,7 @@ Art on Wheels is a collaborative project designed to showcase a seamless integra
   - Implemented **authorization functionality**.  
   - Worked on **controller logic** for specific features.
 
-- **Anmol**  
+- **Anmol Verma**  
   - Built **MVC controllers** to handle application logic.  
   - Designed and implemented **views** for the website.  
   - Conducted **testing** to ensure functionality across all features.
