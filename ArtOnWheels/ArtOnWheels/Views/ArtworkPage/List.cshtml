@@ -1,11 +1,17 @@
 ﻿@model IEnumerable<ArtOnWheels.Models.ArtworkDto>
 
-<h2>Artwork List</h2>
-<table>
+<h1>Artwork List</h1>
+<table class="table">
+    <p>
+        <a class="create-button" asp-action="Create">Create New Artworks</a>
+    </p>
     <thead>
         <tr>
+            <th>Image</th>
             <th>Title</th>
             <th>Artist</th>
+            <th>Year</th>
+            <th>Price</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -13,10 +19,24 @@
         @foreach (var artwork in Model)
         {
             <tr>
+                <!-- Displaying the image -->
+                <td>
+                    @if (!string.IsNullOrEmpty(artwork.ImageUrl))
+                    {
+                        <img src="@Url.Content(artwork.ImageUrl)" alt="@artwork.Title" style="width: 100px; height: auto;" />
+                    }
+                    else
+                    {
+                        <span>No Image Available</span>
+                    }
+                </td>
+                <!-- Displaying the rest of the artwork details -->
                 <td>@artwork.Title</td>
                 <td>@artwork.ArtistName</td>
+                <td>@artwork.CreationYear</td>
+                <td>@artwork.Price</td>
                 <td>
-                    <a href="@Url.Action("Details", "ArtworkPage", new { id = artwork.ArtworkId })">View</a> |
+                    <a href="@Url.Action("Details", "ArtworkPage", new { id = artwork.ArtworkId })">Details</a> |
                     <a href="@Url.Action("Edit", "ArtworkPage", new { id = artwork.ArtworkId })">Edit</a> |
                     <a href="@Url.Action("Delete", "ArtworkPage", new { id = artwork.ArtworkId })">Delete</a>
                 </td>
@@ -24,4 +44,3 @@
         }
     </tbody>
 </table>
-<a href="@Url.Action("Create", "ArtworkPage")">Add New Artwork</a>

@@ -55,6 +55,9 @@ namespace ArtOnWheels.Models
         // Price of the artwork, for transfer and display in summaries or listings
         public decimal Price { get; set; }
 
+        // URL for an image of the artwork
+        public string ImageUrl { get; set; }
+
         // Foreign key to associate artwork with an artist
         public int ArtistId { get; set; }
 
