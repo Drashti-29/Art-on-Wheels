@@ -3,42 +3,185 @@
     ViewData["Title"] = "List";
 }
 
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f0ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 300px;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    .card-header {
+        background-color: #4b0082;
+        color: #fff;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .card-body {
+        padding: 15px;
+        color: #3e1d6e;
+    }
+
+        .card-body p {
+            margin: 10px 0;
+        }
+
+    .card-actions {
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+    }
+
+        .card-actions a {
+            padding: 8px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .card-actions .icon-details {
+            background-color: #ffbc42;
+        }
+
+            .card-actions .icon-details:hover {
+                background-color: #d99a31;
+                transform: scale(1.1);
+            }
+
+        .card-actions .icon-edit {
+            background-color: #20c997;
+        }
+
+            .card-actions .icon-edit:hover {
+                background-color: #17a185;
+                transform: scale(1.1);
+            }
+
+        .card-actions .icon-delete {
+            background-color: #e63946;
+        }
+
+            .card-actions .icon-delete:hover {
+                background-color: #b22d36;
+                transform: scale(1.1);
+            }
+
+    .create-card {
+        width: 300px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+        .create-card:hover {
+            transform: scale(1.05);
+        }
+
+    .create-card-icon {
+        font-size: 40px;
+        color: #6a5acd;
+        margin-bottom: 10px;
+    }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 18px;
+        color: #6a5acd;
+    }
+</style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 <h1>Artists</h1>
 
-<p>
-    <a class="create-button" asp-action="Create">Create New Artist</a>
-</p>
+<div class="card-container">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Bio</th>
-            <th>Artworks</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var artist in Model)
-        {
-            <tr>
-                <td>@artist.FirstName @artist.LastName</td>
-                <td>@artist.Email</td>
-                <td>@artist.ArtistBio</td>
-                <td>
-                    <ul>
-                        @foreach (var artwork in artist.Artworks)
-                        {
-                            <li>@artwork.Title</li>
-                        }
-                    </ul>
-                </td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = artist.ArtistId })" class="btn btn-primary">Edit</a>
-                    <a href="@Url.Action("Delete", new { id = artist.ArtistId })" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    @foreach (var artist in Model)
+    {
+        <div class="card">
+            <div class="card-header">
+                @artist.FirstName @artist.LastName
+            </div>
+            <div class="card-body">
+                <p><strong>Email:</strong> @artist.Email</p>
+                <p><strong>Bio:</strong> @artist.ArtistBio</p>
+            </div>
+            <div class="card-actions">
+                <a href="@Url.Action("Details", new { id = artist.ArtistId })" class="icon-details" title="View Details">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a href="@Url.Action("Edit", new { id = artist.ArtistId })" class="icon-edit" title="Edit Artist">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="@Url.Action("Delete", new { id = artist.ArtistId })" class="icon-delete" title="Delete Artist">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        </div>
+    }
+
+    <!-- Create Artist Card -->
+    <div class="create-card" onclick="window.location.href='@Url.Action("Create")'">
+        <div class="create-card-icon">
+            <i class="fas fa-user-plus"></i>
+        </div>
+        <div class="create-card-text">
+            <p>Create Artist</p>
+        </div>
+    </div>
+
+</div>
