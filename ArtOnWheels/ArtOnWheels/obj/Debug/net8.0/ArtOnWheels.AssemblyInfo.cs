@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArtOnWheels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce14ac4117e08e20e2286b40163e86fc17a69ec8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e9e53455deb5cbf13c2935b235a7a6f9d45e2b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArtOnWheels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArtOnWheels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

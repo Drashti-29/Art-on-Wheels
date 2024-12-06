@@ -1,36 +1,205 @@
 ﻿@model IEnumerable<ArtOnWheels.Models.ExhibitionDto>
-
 @{
     ViewData["Title"] = "Exhibitions List";
 }
 
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f0ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .list-container {
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .list-header {
+        background-color: #4b0082;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px; /* Increased padding for height */
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .list-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+
+        .list-row:hover {
+            background-color: #f5f0ff;
+        }
+
+    .list-column {
+        flex: 1;
+        padding: 0 10px;
+        font-size: 16px;
+    }
+
+    .list-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .list-actions a {
+            padding: 8px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .list-actions .icon-details {
+            background-color: #ffbc42;
+        }
+
+            .list-actions .icon-details:hover {
+                background-color: #d99a31;
+                transform: scale(1.1);
+            }
+
+        .list-actions .icon-edit {
+            background-color: #20c997;
+        }
+
+            .list-actions .icon-edit:hover {
+                background-color: #17a185;
+                transform: scale(1.1);
+            }
+
+        .list-actions .icon-delete {
+            background-color: #e63946;
+        }
+
+            .list-actions .icon-delete:hover {
+                background-color: #b22d36;
+                transform: scale(1.1);
+            }
+
+    .create-button {
+        position: fixed;
+        top: 80px;
+        right: 140px; 
+        display: flex;
+        align-items: center;
+        padding: 14px;
+        font-size: 16px;
+        color: white;
+        background-color: #6a5acd;
+        text-decoration: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        transition: width 0.3s ease, background-color 0.3s ease, right 0.3s ease;
+        overflow: hidden;
+        white-space: nowrap;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+        .create-button i {
+            font-size: 24px;
+            visibility: visible;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .create-button span {
+            font-size: 16px;
+            margin-left: 10px;
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .create-button:hover {
+            width: 200px;
+            border-radius: 5px;
+            background-color: #5a4ebc;
+            right: 50px; /* Shift to the left when hovered */
+        }
+
+            .create-button:hover i {
+                transform: rotate(360deg);
+            }
+
+            .create-button:hover span {
+                opacity: 1;
+                visibility: visible;
+            }
+
+</style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 <h1>Exhibitions</h1>
 
-<div class="form-group">
-	<a href="@Url.Action("Create", "ExhibitionPage")" class="btn btn-success">Add New Exhibition</a>
+<a href="@Url.Action("Create", "ExhibitionPage")" class="create-button">
+    <i class="fas fa-plus"></i>
+    <span>Create an Exhibition</span>
+</a>
+
+<div class="list-container">
+    <!-- Table Header -->
+    <div class="list-header">
+        <div class="list-column">Exhibition Name</div>
+        <div class="list-column">Location</div>
+        <div class="list-column">Date</div>
+        <div class="list-column">Actions</div>
+    </div>
+
+    <!-- Table Rows -->
+    @foreach (var exhibition in Model)
+    {
+        <div class="list-row">
+            <div class="list-column">@exhibition.ExhibitionName</div>
+            <div class="list-column">@exhibition.Location</div>
+            <div class="list-column">@exhibition.Date.ToString("d")</div>
+            <div class="list-column list-actions">
+                <a href="@Url.Action("Details", new { id = exhibition.ExhibitionId })" class="icon-details" title="View Details">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a href="@Url.Action("Edit", new { id = exhibition.ExhibitionId })" class="icon-edit" title="Edit Exhibition">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="@Url.Action("Delete", new { id = exhibition.ExhibitionId })" class="icon-delete" title="Delete Exhibition">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        </div>
+    }
 </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Exhibition Name</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var exhibition in Model)
-        {
-            <tr>
-                <td>@exhibition.ExhibitionName</td>
-                <td>@exhibition.Location</td>
-                <td>@exhibition.Date.ToString("d")</td>
-                <td>
-                    <a href="@Url.Action("Details", new { id = exhibition.ExhibitionId })" class="btn btn-info">Details</a>
-                    <a href="@Url.Action("Edit", new { id = exhibition.ExhibitionId })" class="btn btn-warning">Edit</a>
-                    <a href="@Url.Action("Delete", new { id = exhibition.ExhibitionId })" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
