@@ -25,6 +25,7 @@ builder.Services.AddScoped<IArtistService,ArtistService>();
 builder.Services.AddScoped<IArtworkService, ArtworkService>();
 builder.Services.AddScoped<IStaffService,StaffService >();
 builder.Services.AddScoped<IExhibitionService,ExhibitionService>();
+builder.Services.AddScoped<ICarArtworkService, CarArtworkService>();
 
 builder.Services.AddSwaggerGen();
 
