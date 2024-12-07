@@ -1,8 +1,90 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model ArtOnWheels.Models.CarArtworkViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art on Wheels</title>
+    <style>
+        .car-item {
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .car-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .artwork-item {
+            display: none; /* Initially hidden */
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .artworks-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Art on Wheels</h1>
+
+    <!-- Cars Section -->
+    <div class="cars-container">
+        @foreach (var car in Model.CarList)
+        {
+            <div class="car-item" onclick="filterArtworks(@car.CarId)">
+                <img src="@Url.Content(car.ImageUrl)" alt="@car.Type" />
+                <p>@car.Type</p>
+                <div class="artworks-container">
+                    @foreach (var artwork in Model.ArtworkList)
+                    {
+                        <div class="artwork-item" data-car-ids="@string.Join(',', @car.CarId)">
+                            <img src="@Url.Content(artwork.ImageUrl)" alt="@artwork.Title" style="width: 100%; height: auto; border-radius: 4px;" />
+                            <h3 style="font-size: 16px; margin: 10px 0;">@artwork.Title</h3>
+                            <p><strong>Artist:</strong> @artwork.ArtistName</p>
+                            <p><strong>Year:</strong> @artwork.CreationYear</p>
+                            <p><strong>Price:</strong> $@artwork.Price</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <hr />
+
+    <script>
+        // JavaScript to filter artworks based on CarId
+        function filterArtworks(carId) {
+            console.log("Selected CarId:", carId); // Debugging output
+
+            // Hide all artworks
+            document.querySelectorAll('.artwork-item').forEach(item => {
+                item.style.display = 'none';
+            });
+
+            // Show artworks associated with the selected CarId
+            document.querySelectorAll('.artwork-item').forEach(item => {
+                const carIds = item.getAttribute('data-car-ids').split(',').map(Number);
+                console.log("Artwork CarIds:", carIds); // Debugging output
+                if (carIds.includes(carId)) {
+                    item.style.display = 'block';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
