@@ -1,26 +1,188 @@
 ﻿@model IEnumerable<ArtOnWheels.Models.CarDto>
-<h1>Car List</h1>
-<a asp-action="Create" class="btn btn-primary">Add New Car</a>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Type of car</th>
-            <th>Image</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var car in Model)
-        {
-            <tr>
-                <td>@car.Type</td>
-                <td><img src="@car.ImageUrl" alt="Car Image" style="width:100px;" /></td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@car.CarId" class="btn btn-secondary">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@car.CarId" class="btn btn-danger">Delete</a>
-                    <a asp-action="Details" asp-route-id="@car.CarId" class="btn btn-info">Details</a>
-                </td>
-            </tr>
+
+<head>
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f0ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .car-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .car-item {
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        text-align: center;
+        padding: 15px;
+    }
+
+        .car-item:hover {
+            transform: translateY(-5px);
         }
-    </tbody>
-</table>
+
+        .car-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .car-item h3 {
+            font-size: 22px;
+            color: #5a2d8c;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .car-item p {
+            font-size: 16px;
+            color: #777;
+            margin: 5px 0;
+        }
+
+    .card-actions {
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+    }
+
+        .card-actions a {
+            padding: 8px;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .card-actions .icon-details {
+            background-color: #ffbc42;
+        }
+
+            .card-actions .icon-details:hover {
+                background-color: #d99a31;
+                transform: scale(1.1);
+            }
+
+        .card-actions .icon-edit {
+            background-color: #20c997;
+        }
+
+            .card-actions .icon-edit:hover {
+                background-color: #17a185;
+                transform: scale(1.1);
+            }
+
+        .card-actions .icon-delete {
+            background-color: #e63946;
+        }
+
+            .card-actions .icon-delete:hover {
+                background-color: #b22d36;
+                transform: scale(1.1);
+            }
+
+    .create-car-card {
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .create-car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .create-car-card i {
+            font-size: 40px;
+            color: #6a5acd;
+            margin-bottom: 10px;
+        }
+
+        .create-car-card p {
+            font-size: 18px;
+            color: #6a5acd;
+            font-weight: bold;
+            margin: 0;
+        }
+</style>
+
+<h1>Cars</h1>
+
+<div class="car-container">
+    @foreach (var car in Model)
+    {
+        <div class="car-item">
+            <div class="car-image">
+                @if (!string.IsNullOrEmpty(car.ImageUrl))
+                {
+                    <img src="@Url.Content(car.ImageUrl)" alt="@car.Type" />
+                }
+                else
+                {
+                    <span>No Image Available</span>
+                }
+            </div>
+            <h3>@car.Type</h3>
+            <div class="card-actions">
+                <a href="@Url.Action("Details", new { id = car.CarId })" class="icon-details" title="View Details">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a href="@Url.Action("Edit", new { id = car.CarId })" class="icon-edit" title="Edit Car">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="@Url.Action("Delete", new { id = car.CarId })" class="icon-delete" title="Delete Car">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        </div>
+    }
+
+    <!-- Create Car Card -->
+    <div class="create-car-card" onclick="location.href='@Url.Action("Create")'">
+        <i class="fas fa-plus-circle"></i>
+        <p>Create Car</p>
+    </div>
+</div>
