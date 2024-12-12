@@ -1,18 +1,107 @@
 ﻿@model ArtOnWheels.Models.CarDto
 
 <h1>Car Details</h1>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 60px;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+        color: #5c2ea8;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        color: #5c2ea8;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    img {
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .artwork-container {
+        display: flex;
+        margin-top: 20px;
+    }
+
+        .artwork-container h3 {
+            color: #4b2c7c;
+            margin-top: 10px;
+        }
+
+    .create-card {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+        .create-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #6a5acd;
+    }
+</style>
+
 <div>
     <h2>@Model.Type</h2>
     <img src="@Model.ImageUrl" alt="Car Image" style="width:300px;" />
 </div>
 
-<div>
+<div class="artwork-container">
     @foreach (var artwork in Model.ArtworkTiles)
     {
         <div style="margin-top: 20px;">
-            <h3>@Model.ArtworkTiles</h3>
+            <h3><strong>Artworks: </strong>@artwork</h3>
         </div>
     }
 </div>
 
-<a asp-action="List" class="btn btn-secondary">Back to List</a>
+<!-- back to Car List -->
+<div class="create-card" onclick="window.location.href='@Url.Action("List")'">
+    <div class="create-card-text">
+        <p>Back</p>
+    </div>
+</div>

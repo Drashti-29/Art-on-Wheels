@@ -1,29 +1,136 @@
 ﻿@model ArtOnWheels.Models.StaffDto
 
-<h2>Edit Staff</h2>
+@{
+    ViewData["Title"] = "Edit Staff Member";
+}
 
-<form asp-action="Edit" method="post">
-    <input asp-for="StaffId" type="hidden" />
-    <div>
-        <label>First Name</label>
-        <input asp-for="FirstName" />
-    </div>
-    <div>
-        <label>Last Name</label>
-        <input asp-for="LastName" />
-    </div>
-    <div>
-        <label>Position</label>
-        <input asp-for="Position" />
-    </div>
-    <div>
-        <label>Contact</label>
-        <input asp-for="Contact" />
-    </div>
-    <div>
-        <label>Exhibition</label>
-        <input asp-for="ExhibitionId" />
-    </div>
-    <button type="submit">Update</button>
-    <a href="@Url.Action("List", "StaffPage")">Cancel</a>
-</form>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2rem;
+    }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+    .form-group {
+        margin: 15px 0;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #3e1d6e;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+        input.form-control:focus {
+            border-color: #6a5acd;
+            outline: none;
+        }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 45%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #6a5acd;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
+<h2>Edit a Staff Member</h2>
+
+<div class="form-container">
+    <form asp-action="Edit" method="post">
+        <input asp-for="StaffId" type="hidden" />
+
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control" id="FirstName" required />
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control" id="LastName" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Position">Position</label>
+            <input asp-for="Position" class="form-control" id="Position" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Contact">Contact Number</label>
+            <input asp-for="Contact" class="form-control" id="Contact" required />
+        </div>
+
+        <div class="form-group">
+            <label for="ExhibitionId">Exhibition ID</label>
+            <input asp-for="ExhibitionId" class="form-control" id="ExhibitionId" required />
+        </div>
+
+        <div class="form-group">
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="@Url.Action("List", "StaffPage")" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

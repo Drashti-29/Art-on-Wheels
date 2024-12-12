@@ -1,15 +1,149 @@
 ﻿@model ArtOnWheels.Models.CarDto
-<h1>Add New Car</h1>
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label>Type</label>
-        <input asp-for="Type" class="form-control" />
-        <span asp-validation-for="Type" class="text-danger"></span>
+
+@{
+    ViewData["Title"] = "Add New Car";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2.5rem;
+    }
+
+    .form-group {
+        margin: 15px 0;
+        padding: 5px;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #3e1d6e;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+        input.form-control:focus {
+            border-color: #6a5acd;
+            outline: none;
+        }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+        .form-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-container h2 {
+            color: #3e1d6e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    .create-card {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+        .create-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #6a5acd;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #6a5acd;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        margin-top: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<h2>Add a New Car</h2>
+
+<div class="form-container">
+    <form asp-action="Create" method="post">
+        <div>
+            <label class="control-label">Type:</label>
+            <input name="Type" type="text" class="form-control" />
+        </div>
+
+        <div>
+            <label class="control-label">Image URL:</label>
+            <input name="ImageUrl" type="text" class="form-control" />
+        </div>
+
+        <div>
+            <input type="submit" value="Add Car" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<!-- back button -->
+<div class="create-card" onclick="window.location.href='@Url.Action("List")'">
+    <div class="create-card-text">
+        <p>Back</p>
     </div>
-    <div class="form-group">
-        <label>Image URL</label>
-        <input asp-for="ImageUrl" class="form-control" />
-        <span asp-validation-for="ImageUrl" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>

@@ -4,39 +4,170 @@
     ViewData["Title"] = "Edit Artist";
 }
 
-<h2>Edit Artist</h2>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" name="ArtistId" value="@Model.ArtistId" />
+    h2 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2.5rem;
+    }
 
-    <div class="form-group">
-        <label for="FirstName">First Name</label>
-        <input type="text" class="form-control" id="FirstName" name="FirstName" value="@Model.FirstName" required />
-    </div>
+    .form-group {
+        margin: 15px 0;
+        padding: 5px;
+    }
 
-    <div class="form-group">
-        <label for="LastName">Last Name</label>
-        <input type="text" class="form-control" id="LastName" name="LastName" value="@Model.LastName" required />
-    </div>
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #3e1d6e;
+        margin-bottom: 5px;
+        display: block;
+    }
 
-    <div class="form-group">
-        <label for="ArtistBio">Artist Bio</label>
-        <textarea class="form-control" id="ArtistBio" name="ArtistBio" required>@Model.ArtistBio</textarea>
-    </div>
+    input.form-control,
+    textarea.form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
 
-    <div class="form-group">
-        <label for="Email">Email</label>
-        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
-    </div>
+        input.form-control:focus,
+        textarea.form-control:focus {
+            border-color: #6a5acd;
+            outline: none;
+        }
 
-    <h2>Select Artworks</h2>
-    <div class="form-group">
-        <label for="artworksSelect">Choose Artworks</label>
-        <select asp-for="ArtworkIds" asp-items="@(new MultiSelectList(Model.Artworks, "ArtworkId", "Title", Model.ArtworkIds))" multiple="multiple" class="form-control" id="artworksSelect" disabled>
-        </select>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-primary" />
-        <a asp-action="List" class="btn btn-secondary">Cancel</a>
-    </div>
-</form>
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+    .create-card {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+        .create-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #6a5acd;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 45%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #6a5acd;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: black;
+        text-align: center;
+    }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
+<h2>Edit anArtist</h2>
+
+<div class="form-container">
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" name="ArtistId" value="@Model.ArtistId" />
+
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" value="@Model.FirstName" required />
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" value="@Model.LastName" required />
+        </div>
+
+        <div class="form-group">
+            <label for="ArtistBio">Artist Bio</label>
+            <textarea class="form-control" id="ArtistBio" name="ArtistBio" required>@Model.ArtistBio</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required />
+        </div>
+
+        <h2>Select Artworks</h2>
+        <div class="form-group">
+            <label for="artworksSelect">Choose Artworks</label>
+            <select asp-for="ArtworkIds" asp-items="@(new MultiSelectList(Model.Artworks, "ArtworkId", "Title", Model.ArtworkIds))" multiple="multiple" class="form-control" id="artworksSelect" disabled>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="button-container">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="List" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

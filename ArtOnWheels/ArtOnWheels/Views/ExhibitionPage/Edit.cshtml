@@ -4,23 +4,127 @@
     ViewData["Title"] = "Edit Exhibition";
 }
 
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2.5rem;
+    }
+
+    .form-group {
+        margin: 15px 0;
+        padding: 5px;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #3e1d6e;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+        input.form-control:focus {
+            border-color: #6a5acd;
+            outline: none;
+        }
+
+    .text-danger {
+        font-size: 0.9rem;
+        color: #d9534f;
+    }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 45%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #6a5acd;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: black;
+        text-align: center;
+    }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
 <h1>Edit Exhibition</h1>
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label for="ExhibitionName">Exhibition Name</label>
-        <input type="text" id="ExhibitionName" name="ExhibitionName" class="form-control" value="@Model.ExhibitionName" />
-    </div>
+<div class="form-container">
+    <form asp-action="Edit" method="post">
+        <div class="form-group">
+            <label for="ExhibitionName">Exhibition Name</label>
+            <input type="text" id="ExhibitionName" name="ExhibitionName" class="form-control" value="@Model.ExhibitionName" required />
+        </div>
 
-    <div class="form-group">
-        <label for="Location">Location</label>
-        <input type="text" id="Location" name="Location" class="form-control" value="@Model.Location" />
-    </div>
+        <div class="form-group">
+            <label for="Location">Location</label>
+            <input type="text" id="Location" name="Location" class="form-control" value="@Model.Location" required />
+        </div>
 
-    <div class="form-group">
-        <label for="Date">Date</label>
-        <input type="date" id="Date" name="Date" class="form-control" value="@Model.Date.ToString("yyyy-MM-dd")" />
-    </div>
+        <div class="form-group">
+            <label for="Date">Date</label>
+            <input type="date" id="Date" name="Date" class="form-control" value="@Model.Date.ToString("yyyy-MM-dd")" required />
+        </div>
 
-    <button type="submit" class="btn btn-primary">Update</button>
-</form>
+        <div class="form-group">
+            <div class="button-container">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="List" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

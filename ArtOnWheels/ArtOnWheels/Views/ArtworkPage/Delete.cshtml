@@ -4,12 +4,93 @@
     ViewData["Title"] = "Delete Artwork";
 }
 
-<h2>Delete Artwork</h2>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
 
-<div>
-    <h3>Are you sure you want to delete @Model.Title artwork?</h3>
-    <form method="post">
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a href="@Url.Action("List", "ArtworkPage")" class="btn btn-secondary">Cancel</a>
+    h1 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2rem;
+    }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .artwork-image {
+        width: 200px;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 45%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-danger {
+        background-color: #d9534f;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
+<h2>Delete an Artwork</h2>
+
+<div class="form-container">
+    <h3>Are you sure you want to delete <strong>@Model.Title </strong>artwork?</h3>
+    <img src="@Model.ImageUrl" alt="Artwork Image" class="artwork-image" />
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ArtworkId" />
+        <div class="button-container">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="@Url.Action("List", "ArtworkPage")" class="btn btn-secondary">Cancel</a>
+        </div>
     </form>
 </div>

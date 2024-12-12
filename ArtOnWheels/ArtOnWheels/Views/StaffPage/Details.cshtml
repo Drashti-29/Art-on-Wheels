@@ -4,32 +4,94 @@
     ViewData["Title"] = "Staff Details";
 }
 
-<div class="container">
-    <h2>@ViewData["Title"]</h2>
-    <div class="staff-details">
-        <div class="form-group">
-            <label for="FirstName">First Name:</label>
-            <p id="FirstName">@Model.FirstName</p>
-        </div>
-        <div class="form-group">
-            <label for="LastName">Last Name:</label>
-            <p id="LastName">@Model.LastName</p>
-        </div>
-        <div class="form-group">
-            <label for="Position">Position:</label>
-            <p id="Position">@Model.Position</p>
-        </div>
-        <div class="form-group">
-            <label for="Contact">Contact:</label>
-            <p id="Contact">@Model.Contact</p>
-        </div>
-        <div class="form-group">
-            <label for="ExhibitionName">Exhibition:</label>
-            <p id="ExhibitionName">@Model.ExhibitionName</p>
-        </div>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
 
-        <div class="form-group">
-            <a href="@Url.Action("List", "StaffPage")" class="btn btn-primary">Back to List</a>
-        </div>
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 60px;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+        color: #5c2ea8;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 10px 20px;
+        color: #4b2c7c;
+    }
+
+    strong {
+        color: #3e1d6e;
+    }
+
+    li {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    ul {
+        padding-left: 3rem;
+    }
+
+    .create-card {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .create-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #6a5acd;
+    }
+</style>
+
+<h1>Staff Member Details</h1>
+
+<h4>@Model.FirstName @Model.LastName</h4>
+<p><strong>Position:</strong> @Model.Position</p>
+<p><strong>Contact:</strong> @Model.Contact</p>
+<p><strong>ExhibitionName:</strong> @Model.ExhibitionName</p>
+
+<!-- back to Staff List -->
+<div class="create-card" onclick="window.location.href='@Url.Action("List")'">
+    <div class="create-card-text">
+        <p>Back</p>
     </div>
 </div>

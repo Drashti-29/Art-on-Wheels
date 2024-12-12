@@ -7,6 +7,50 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ArtOnWheels.styles.css" asp-append-version="true" />
+    <style>
+        /* Hover effect for navbar items */
+        .navbar-nav .nav-link {
+            text-decoration: none;
+            transition: text-decoration 0.3s ease, color 0.3s ease;
+        }
+
+            /* On hover, change text color to purple and underline */
+            .navbar-nav .nav-link:hover {
+                color: #800080; /* Purple color */
+                text-decoration: underline;
+            }
+
+        /* On hover, remove underline and revert to default color */
+        .navbar-nav .nav-link {
+            color: #000000; /* Default text color */
+        }
+
+        /* Ensure the body and main content fill the height of the screen */
+        body, html {
+            height: 100%;
+        }
+
+        .container {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 2px 0;
+            font-size: 0.75rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            border-top: 1px solid #ddd;
+            position: relative;
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -26,9 +70,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Swagger" asp-action="Index">API</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CarPage" asp-action="List">Car</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ArtistPage" asp-action="List">Artists</a>
                         </li>
                         <li class="nav-item">
@@ -39,6 +80,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="StaffPage" asp-action="List">Staff</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CarPage" asp-action="List">Car</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Roles" asp-action="Index">Roles</a>
@@ -55,11 +99,18 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - ArtOnWheels - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="bg-white text-dark border-top box-shadow py-1">
+        <div class="container text-center">
+            <p class="mb-1 text-muted" style="color: #6c757d;">&copy; 2024 - ArtOnWheels</p>
+            <p>
+                <a asp-area="" asp-controller="Home" asp-action="#" class="text-dark text-decoration-none" style="font-weight: bold; color: #007bff; text-decoration: none; transition: color 0.3s ease, text-decoration 0.3s ease;"
+                   onmouseover="this.style.color='#0056b3'; this.style.textDecoration='underline'" onmouseout="this.style.color='#007bff'; this.style.textDecoration='none'">
+                    Privacy Policy
+                </a>
+            </p>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
