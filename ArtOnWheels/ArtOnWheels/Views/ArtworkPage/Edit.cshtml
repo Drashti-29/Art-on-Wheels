@@ -1,32 +1,139 @@
 ﻿@model ArtOnWheels.Models.ArtworkDto
 
-<h2>Edit Artwork</h2>
+@{
+    ViewData["Title"] = "Edit Artiwork";
+}
 
-<form asp-action="Edit" method="post">
-    <div class="form-group">
-        <label for="Title">Title</label>
-        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required />
-    </div>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
 
-    <div class="form-group">
-        <label for="Description">Description</label>
-        <textarea class="form-control" id="Description" name="Description" required>@Model.Description</textarea>
-    </div>
+    h2 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2.5rem;
+    }
 
-    <div class="form-group">
-        <label for="Price">Price</label>
-        <input type="number" class="form-control" id="Price" name="Price" value="@Model.Price" required />
-    </div>
+    .form-group {
+        margin: 15px 0;
+        padding: 5px;
+    }
 
-    <div class="form-group">
-        <label for="CreationYear">Creation Year</label>
-        <input type="number" class="form-control" id="CreationYear" name="CreationYear" value="@Model.CreationYear" required />
-    </div>
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #3e1d6e;
+        margin-bottom: 5px;
+        display: block;
+    }
 
-    <div class="form-group">
-        <label for="ImageUrl">Image URL</label>
-        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" value="@Model.ImageUrl" required />
-    </div>
+    input.form-control,
+    textarea.form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
 
-    <button type="submit" class="btn btn-primary">Update</button>
-</form>
+        input.form-control:focus,
+        textarea.form-control:focus {
+            border-color: #6a5acd;
+            outline: none;
+        }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 45%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #6a5acd;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: black;
+        text-align: center;
+    }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
+<h2>Edit an Artwork</h2>
+
+<div class="form-container">
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" name="ArtworkId" value="@Model.ArtworkId" />
+
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <textarea class="form-control" id="Description" name="Description" required>@Model.Description</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Price">Price</label>
+            <input type="number" class="form-control" id="Price" name="Price" value="@Model.Price" required />
+        </div>
+
+        <div class="form-group">
+            <label for="CreationYear">Creation Year</label>
+            <input type="number" class="form-control" id="CreationYear" name="CreationYear" value="@Model.CreationYear" required />
+        </div>
+
+        <div class="form-group">
+            <label for="ImageUrl">Image URL</label>
+            <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" value="@Model.ImageUrl" required />
+        </div>
+
+        <div class="form-group">
+            <div class="button-container">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="List" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

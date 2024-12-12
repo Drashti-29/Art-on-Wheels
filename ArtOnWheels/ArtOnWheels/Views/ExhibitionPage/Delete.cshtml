@@ -4,12 +4,90 @@
     ViewData["Title"] = "Delete Exhibition";
 }
 
-<h1>Delete Exhibition</h1>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
 
-<p>Are you sure you want to delete the exhibition "<strong>@Model.ExhibitionName</strong>"?</p>
+    h2 {
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-top: 20px;
+        color: #5c2ea8;
+        font-size: 2rem;
+    }
 
-<form asp-action="Delete" method="post">
-    <input asp-for="ExhibitionId" type="hidden" value="@Model.ExhibitionId" />
-    <button type="submit">Confirm</button>
-    <a href="@Url.Action("List", "ExhibitionPage")">Cancel</a>
-</form>
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+    }
+
+    .alert-danger {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        width: 45%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-danger {
+        background-color: #d9534f;
+        color: white;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+</style>
+
+<h1>Delete an Exhibition</h1>
+
+<div class="form-container">
+    <div class="alert alert-danger">
+        <strong>Warning!</strong><p> Are you sure you want to delete the exhibition "<strong>@Model.ExhibitionName</strong>"?</p>
+    </div>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="ExhibitionId" value="@Model.ExhibitionId" />
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="@Url.Action("List")" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

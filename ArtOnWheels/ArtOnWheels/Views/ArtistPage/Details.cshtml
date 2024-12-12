@@ -1,5 +1,106 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model ArtOnWheels.Models.ArtistDto
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3e9ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 60px;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+        color: #5c2ea8;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 10px 20px;
+        color: #4b2c7c;
+    }
+
+    strong {
+        color: #3e1d6e;
+    }
+
+    li {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+    ul {
+        padding-left: 3rem;
+    }
+
+    .create-card {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .create-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #6a5acd;
+    }
+</style>
+
+<h1>Artist Details</h1>
+<h2>@Model.FirstName @Model.LastName</h2>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Bio:</strong> @Model.ArtistBio</p>
+<p>
+    <strong>Artworks:</strong>
+
+    @if (Model.Artworks != null && Model.Artworks.Any())
+    {
+        <ul>
+        @foreach (var artwork in Model.Artworks)
+        {
+            <li>@artwork.Title</li>
+        }
+        </ul>
+    }
+    else
+    {
+        <p>No artworks available for this artist.</p>
+    }
+</p>
+
+<!-- back to Artist List -->
+<div class="create-card" onclick="window.location.href='@Url.Action("List")'">
+    <div class="create-card-text">
+        <p>Back</p>
+    </div>
+</div>

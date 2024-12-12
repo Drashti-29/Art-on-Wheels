@@ -1,14 +1,115 @@
 ﻿@model ArtOnWheels.Models.ArtworkDto
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f0ff;
+        color: #3e1d6e;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 60px;
+        color: #3e1d6e;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .artwork-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .artwork-details {
+        flex: 1;
+        max-width: 50%;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+        .artwork-details p {
+            margin: 10px 0;
+        }
+
+        .artwork-details strong {
+            color: #3e1d6e;
+            font-weight: bold;
+        }
+
+    .artwork-image {
+        flex: 1;
+        max-width: 45%;
+        text-align: center;
+    }
+
+        .artwork-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border: 5px solid black;
+        }
+
+    .create-card {
+        width: 100px;
+        height: 40px;
+        margin: 20px;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        background-color: #fff;
+        color: #6a5acd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+        .create-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    .create-card-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #6a5acd;
+    }
+
+</style>
 
 <h1>Artwork Details</h1>
-<div>
-    <h3>@Model.Title</h3>
-    <p><strong>Artist:</strong> @Model.ArtistName</p>
-    <p><strong>Description:</strong> @Model.Description</p>
-    <p><strong>Year Created:</strong> @Model.CreationYear</p>
-    <p><strong>Price:</strong> @Model.Price</p>
-    <p><strong>Exhibitions:</strong> @string.Join(", ", Model.ExhibitionNames)</p>
-    <img src="@Model.ImageUrl" alt="Artwork Image" />
+
+<div class="artwork-container">
+    <div class="artwork-details">
+        <h3>@Model.Title</h3>
+        <p><strong>Artist:</strong> @Model.ArtistName</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+        <p><strong>Year Created:</strong> @Model.CreationYear</p>
+        <p><strong>Price:</strong> @Model.Price</p>
+        <p><strong>Exhibitions:</strong> @string.Join(", ", Model.ExhibitionNames)</p>
+    </div>
+    <div class="artwork-image">
+        <img src="@Model.ImageUrl" alt="Artwork Image" />
+    </div>
 </div>
+
 <br />
-<a href="@Url.Action("List", "ArtworkPage")">Back to Artwork List</a>
+<!-- back to Artwork List -->
+<div class="create-card" onclick="window.location.href='@Url.Action("List")'">
+    <div class="create-card-text">
+        <p>Back</p>
+    </div>
+</div>
