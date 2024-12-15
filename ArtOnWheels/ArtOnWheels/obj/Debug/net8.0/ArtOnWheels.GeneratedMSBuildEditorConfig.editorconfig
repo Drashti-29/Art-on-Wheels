@@ -17,315 +17,315 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ArtOnWheels
 build_property.RootNamespace = ArtOnWheels
-build_property.ProjectDir = C:\Users\HP\Desktop\C#\Art-on-Wheels\ArtOnWheels\ArtOnWheels\
+build_property.ProjectDir = C:\Users\HP\OneDrive\Desktop\humber\sem 2\Back end development\Art-On-Wheels\ArtOnWheels\ArtOnWheels\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\HP\Desktop\C#\Art-on-Wheels\ArtOnWheels\ArtOnWheels
+build_property.MSBuildProjectDirectory = C:\Users\HP\OneDrive\Desktop\humber\sem 2\Back end development\Art-On-Wheels\ArtOnWheels\ArtOnWheels
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Lockout.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Error.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxDcmVhdGUuY3NodG1s
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Delete.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Details.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Edit.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Index.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/List.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtistPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aXN0UGFnZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Create.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya1BhZ2VcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Delete.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya1BhZ2VcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Details.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya1BhZ2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Edit.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya1BhZ2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/List.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ArtworkPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0d29ya1BhZ2VcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Create.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyUGFnZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Delete.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyUGFnZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Details.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyUGFnZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Edit.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyUGFnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/List.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/CarPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyUGFnZVxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Create.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhoaWJpdGlvblBhZ2VcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Delete.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhoaWJpdGlvblBhZ2VcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Details.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhoaWJpdGlvblBhZ2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Edit.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhoaWJpdGlvblBhZ2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/List.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/ExhibitionPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhoaWJpdGlvblBhZ2VcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Home/Index.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Home/Privacy.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Roles/Create.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Roles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Roles/Index.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/Error.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Create.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZQYWdlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Delete.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZQYWdlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Details.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZQYWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Edit.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZQYWdlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/List.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/StaffPage/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhZmZQYWdlXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/_ViewImports.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/_ViewStart.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/Desktop/C\#/Art-on-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/_Layout.cshtml]
+[C:/Users/HP/OneDrive/Desktop/humber/sem 2/Back end development/Art-On-Wheels/ArtOnWheels/ArtOnWheels/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gh2iq8aqlh
